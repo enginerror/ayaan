@@ -1,8 +1,8 @@
-import React from 'react'
+import DevelopmentMessage from "../components/DevelopmentMessage";
 
 const AboutPage = () => {
   return (
-    <div>AboutPage</div>
+    <div><DevelopmentMessage /></div>
   )
 }
 

@@ -1,8 +1,8 @@
-import React from 'react'
+import DevelopmentMessage from '../components/DevelopmentMessage'
 
 const ContactPage = () => {
   return (
-    <div>ContactPage</div>
+    <div><DevelopmentMessage /></div>
   )
 }
 

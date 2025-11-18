@@ -8,7 +8,7 @@ import FixedNavbar from "./Navbar/FixedNavbar";
 
 function App() {
   return (
-    <div className="outfit px-24">
+    <div className="outfit px-26">
       <BrowserRouter>
         <FixedNavbar />
         <Navbar />
