@@ -1,9 +1,11 @@
-import DevelopmentMessage from '../components/DevelopmentMessage'
+import DevelopmentMessage from "../components/DevelopmentMessage";
 
 const ContactPage = () => {
   return (
-    <div><DevelopmentMessage /></div>
-  )
-}
+    <div className="mt-6 sm:mt-8 md:mt-12">
+      <DevelopmentMessage />
+    </div>
+  );
+};
 
-export default ContactPage
+export default ContactPage;

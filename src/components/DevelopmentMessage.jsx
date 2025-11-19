@@ -1,7 +1,9 @@
 const DevelopmentMessage = () => {
   return (
-    <div className="mt-45 w-full flex justify-center items-center text-gray-600 text-lg">
-      Development In Progress ...
+    <div className="min-h-[60vh] w-full flex justify-center items-center px-4">
+      <p className="text-gray-600 text-base sm:text-lg md:text-xl text-center">
+        Development In Progress ...
+      </p>
     </div>
   );
 };
