@@ -1,11 +1,11 @@
-import DevelopmentMessage from "../components/DevelopmentMessage";
+import { TextShimmer } from "@/components/ui/text-shimmer";
 
-const ContactPage = () => {
+const AboutPage = () => {
   return (
-    <div className="mt-6 sm:mt-8 md:mt-12">
-      <DevelopmentMessage />
+    <div className="min-h-screen w-full flex justify-center mt-6 sm:mt-8 md:mt-12">
+      <TextShimmer>Development in progress ...</TextShimmer>
     </div>
   );
 };
 
-export default ContactPage;
+export default AboutPage;

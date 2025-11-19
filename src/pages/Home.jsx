@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import Line from "../components/Line";
 import { FileText } from "lucide-react";
 import Skills from "../Home/Skills";
 
@@ -14,11 +13,11 @@ const HomePage = () => {
             Hi, My name is
           </p>
           <div className="flex items-center gap-2 sm:gap-4 md:gap-6 mt-6 sm:mt-8 justify-center flex-wrap sm:flex-nowrap">
-            <Line />{" "}
+            <div className="hidden sm:block w-8 sm:w-12 md:w-16 lg:w-50 h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 bg-black rounded-sm"></div>
             <h1 className="prata-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center whitespace-nowrap">
               Ayaan Murshed Khan
             </h1>{" "}
-            <Line />
+            <div className="hidden sm:block w-8 sm:w-12 md:w-16 lg:w-50 h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 bg-black rounded-sm"></div>
           </div>
         </div>
         <p className="text-center text-base sm:text-lg md:text-xl lg:text-2xl text-gray-500 mt-4 sm:mt-6 source-serif px-4 max-w-3xl">

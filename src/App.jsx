@@ -6,6 +6,7 @@ import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import FixedNavbar from "./Navbar/FixedNavbar";
 import Footer from "./footer/footer";
+import AiInput from "./components/ai-input"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+        <AiInput />
         <Footer />
       </BrowserRouter>
     </div>

@@ -4,7 +4,7 @@ const Skills = () => {
   return (
     <div className="mt-6 sm:mt-8 md:mt-12 pb-8 sm:pb-12">
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 prata-regular flex justify-center items-center gap-3">
-        Projects <TheneLine />
+        Skills <TheneLine />
       </h1>
 
       <div className="flex items-center justify-center flex-wrap gap-2 lg:mx-86 md:mt-6">
