@@ -9,8 +9,8 @@ const Navbar = () => {
   return (
     <>
       <div className="flex justify-between items-center py-3 sm:py-4">
-        <Link to="/" className="prata-regular text-lg sm:text-xl md:text-2xl">
-          enginerror
+        <Link to="/" className="prata-regular text-lg sm:text-xl md:text-2xl flex items-center gap-2">
+          <div className="hidden sm:block w-4 sm:w-6 md:w-8 lg:w-10 h-[1.5px] bg-black rounded-sm"></div> enginerror
         </Link>
         <div className="flex gap-3 sm:gap-4 items-center">
           <ThemeToggle />
@@ -53,23 +53,23 @@ const Navbar = () => {
 
         <div className="flex flex-col justify-center h-[calc(100vh-80px)] px-4">
           <Link to="/" onClick={() => setOpen(false)}>
-            <div className="text-center text-xl sm:text-2xl uppercase border-t border-gray-300 py-5 hover:bg-black hover:text-white transition-all duration-200">
+            <div className="text-center text-xl sm:text-2xl uppercase border-t border-gray-300 py-3 hover:bg-black hover:text-white transition-all duration-200">
               Home
             </div>
           </Link>
           <Link to="/projects" onClick={() => setOpen(false)}>
-            <div className="text-center text-xl sm:text-2xl uppercase border-t border-gray-300 py-5 hover:bg-black hover:text-white transition-all duration-200">
+            <div className="text-center text-xl sm:text-2xl uppercase border-t border-gray-300 py-3 hover:bg-black hover:text-white transition-all duration-200">
               Projects
             </div>
           </Link>
-          <Link to="/about" onClick={() => setOpen(false)}>
-            <div className="text-center text-xl sm:text-2xl uppercase border-t border-gray-300 py-5 hover:bg-black hover:text-white transition-all duration-200">
-              About
+          <Link to="/dsa" onClick={() => setOpen(false)}>
+            <div className="text-center text-xl sm:text-2xl uppercase border-t border-gray-300 py-3 hover:bg-black hover:text-white transition-all duration-200">
+              DSA
             </div>
           </Link>
-          <Link to="/contact" onClick={() => setOpen(false)}>
-            <div className="text-center text-xl sm:text-2xl uppercase border-t border-b border-gray-300 py-5 hover:bg-black hover:text-white transition-all duration-200">
-              Contact
+          <Link to="/dashboard" onClick={() => setOpen(false)}>
+            <div className="text-center text-xl sm:text-2xl uppercase border-t border-b border-gray-300 py-3 hover:bg-black hover:text-white transition-all duration-200">
+              Dashboard
             </div>
           </Link>
         </div>

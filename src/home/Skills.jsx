@@ -1,18 +1,31 @@
 import TheneLine from "../components/TheneLine";
+import C from "../components/skills/c";
+import CPP from "../components/skills/cpp";
+import HTML from "../components/skills/html";
+import CSS from "../components/skills/css";
+import GIT from "../components/skills/git";
+import JavaScript from "../components/skills/javascript";
+import React from "../components/skills/react";
+import Github from "../components/skills/github";
+import Tailwind from "../components/skills/tailwind";
 
 const Skills = () => {
   return (
-    <div className="mt-6 sm:mt-8 md:mt-12 pb-8 sm:pb-12">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 prata-regular flex justify-center items-center gap-3">
+    <div className="mt-6 sm:mt-8 md:mt-10 pb-8 sm:pb-12">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-8 md:mb-10 lg:mb-12 prata-regular flex justify-center items-center gap-3">
         Skills <TheneLine />
       </h1>
 
-      <div className="flex items-center justify-center flex-wrap gap-2 lg:mx-86 md:mt-6">
-        <div className="w-fit bg-amber-600 text-gray-900 px-4 py-1.5 rounded-xs hover:opacity-90 transition">HTML</div>
-        <div className="w-fit bg-blue-500 text-gray-100 px-4 py-1.5 rounded-xs hover:opacity-90 transition">CSS</div>
-        <div className="w-fit bg-amber-300 text-black px-4 py-1.5 rounded-xs hover:opacity-90 transition">Javascript</div>
-        <div className="w-fit bg-blue-400 text-white px-4 py-1.5 rounded-xs hover:opacity-90 transition">React</div>
-        <div className="w-fit bg-green-600 text-black px-4 py-1.5 rounded-xs hover:opacity-90 transition">Node.js</div>
+      <div className="flex items-center justify-center flex-wrap gap-1.5 lg:mx-86 md:mt-6 cursor-default">
+        <C />
+        <CPP />
+        <React />
+        <JavaScript />
+        <Tailwind />
+        <GIT />
+        <Github />
+        <HTML />
+        <CSS />
       </div>
     </div>
   );

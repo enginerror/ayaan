@@ -2,11 +2,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Navbar from "./Navbar/Navbar.jsx";
 import ProjectsPage from "./pages/ProjectsPage";
-import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage";
 import FixedNavbar from "./Navbar/FixedNavbar";
 import AiInput from "./components/ai-input"
 import Footer from "./footer/GlobalFooter.jsx";
+import AddProjectPage from "./pages/AddProjectPage";
+import DashboardPage from "./pages/DashbordPage";
+import DSAPage from "./pages/DSAPage";
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/add" element={<AddProjectPage />} />
+          <Route path="/dsa" element={<DSAPage />} />
+          <Route path="/dashboard" element={<DashboardPage />} />
         </Routes>
         <AiInput />
         <Footer />

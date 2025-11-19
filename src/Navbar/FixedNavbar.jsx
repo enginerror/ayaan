@@ -33,27 +33,27 @@ const FixedNavbar = () => {
             </p>
           </Link>
 
-          <Link to="/about">
+          <Link to="/dsa">
             <p
               className={`text-xs sm:text-sm md:text-[14px] px-3 sm:px-4 md:px-5 py-2 rounded-full cursor-pointer uppercase transition-colors duration-200 ${
-                location.pathname === "/about"
+                location.pathname === "/dsa"
                   ? "bg-black text-white"
                   : "hover:bg-gray-200 hover:text-black"
               }`}
             >
-              About
+              DSA
             </p>
           </Link>
 
-          <Link to="/contact">
+          <Link to="/dashboard">
             <p
               className={`text-xs sm:text-sm md:text-[14px] px-3 sm:px-4 md:px-5 py-2 rounded-full cursor-pointer uppercase transition-colors duration-200 ${
-                location.pathname === "/contact"
+                location.pathname === "/dashboard"
                   ? "bg-black text-white"
                   : "hover:bg-gray-200 hover:text-black"
               }`}
             >
-              Contact
+              Dashboard
             </p>
           </Link>
         </div>
