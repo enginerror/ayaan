@@ -5,6 +5,7 @@ import ProjectsPage from "./pages/Projects";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import FixedNavbar from "./Navbar/FixedNavbar";
+import Footer from "./footer/footer";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

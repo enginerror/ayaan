@@ -2,7 +2,7 @@ import { ChevronRight, Code, Link } from "lucide-react";
 
 const ProjectCard = () => {
   return (
-    <div className="h-fit w-full rounded-lg border border-gray-200 p-2 sm:p-3">
+    <div className="h-fit w-full rounded-lg border border-gray-200 p-2">
       <div className="h-48 sm:h-52 md:h-56 lg:h-60 w-full rounded-md bg-gray-200 object-cover overflow-hidden">
         <img src="" alt="" className="w-full h-full object-cover" />
       </div>
