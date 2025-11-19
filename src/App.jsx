@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/Home";
-import Navbar from "./Navbar/Navbar";
-import ProjectsPage from "./pages/Projects";
-import AboutPage from "./pages/About";
-import ContactPage from "./pages/Contact";
+import HomePage from "./pages/HomePage";
+import Navbar from "./Navbar/Navbar.jsx";
+import ProjectsPage from "./pages/ProjectsPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 import FixedNavbar from "./Navbar/FixedNavbar";
 import AiInput from "./components/ai-input"
 import Footer from "./footer/GlobalFooter.jsx";
