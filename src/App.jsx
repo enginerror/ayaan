@@ -5,8 +5,8 @@ import ProjectsPage from "./pages/Projects";
 import AboutPage from "./pages/About";
 import ContactPage from "./pages/Contact";
 import FixedNavbar from "./Navbar/FixedNavbar";
-import Footer from "./footer/footer";
 import AiInput from "./components/ai-input"
+import Footer from "./footer/GlobalFooter.jsx";
 
 function App() {
   return (
