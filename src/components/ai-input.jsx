@@ -235,7 +235,7 @@ export function MorphPanel() {
         ref={wrapperRef}
         data-panel
         className={cx(
-          "bg-white/0 relative z-3 flex flex-col items-center overflow-hidden backdrop-blur-sm border border-white/30 shadow-lg rounded-xl"
+          "bg-white/90 relative z-3 flex flex-col items-center overflow-hidden backdrop-blur-sm border border-white/30 shadow-lg rounded-xl"
         )}
         initial={false}
         animate={{
