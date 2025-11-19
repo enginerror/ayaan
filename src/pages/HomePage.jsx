@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { FileText } from "lucide-react";
-import Skills from "../Home/Skills.jsx";
+import Skills from "@/home/Skills";
 
 const HomePage = () => {
   const navigate = useNavigate();
