@@ -1,5 +1,5 @@
-import Hero from "../home/Hero";
-import Skills from "../home/Skills";
+import Hero from "@/home/Hero";
+import Skills from "@/home/Skills";
 
 const HomePage = () => {
 

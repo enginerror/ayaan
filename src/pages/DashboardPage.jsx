@@ -1,4 +1,4 @@
-import { TextShimmer } from "@/components/ui/text-shimmer";
+import { TextShimmer } from "@/components/TextLoader";
 
 const DashboardPage = () => {
   return (

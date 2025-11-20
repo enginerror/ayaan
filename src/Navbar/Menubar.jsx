@@ -1,13 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
 
-const FixedNavbar = () => {
+const Menubar = () => {
   const location = useLocation();
 
   return (
     <div className="hidden sm:block">
       <div className="w-full flex justify-center items-center relative">
         <div
-          class="flex justify-center items-center border border-white/30 bg-white/20 backdrop-blur-3xl shadow-xl fixed mt-12 sm:mt-14 md:mt-16 px-2 py-2 rounded-full z-40 gap-1"
+          className="flex justify-center items-center border border-white/30 bg-white/20 backdrop-blur-3xl shadow-xl fixed mt-12 sm:mt-14 md:mt-16 px-2 py-2 rounded-full z-40 gap-1"
         >
           <Link to="/">
             <p
@@ -62,4 +62,4 @@ const FixedNavbar = () => {
   );
 };
 
-export default FixedNavbar;
+export default Menubar;

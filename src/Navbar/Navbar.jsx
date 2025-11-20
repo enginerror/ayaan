@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import ThemeToggle from "../components/ThemeToggle";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import ThemeToggle from "@/theme/ThemeToggle";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
