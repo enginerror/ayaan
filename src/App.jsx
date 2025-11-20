@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Menubar from "./Navbar/Menubar";
-import Navbar from "./Navbar/Navbar";
-import HomePage from "./pages/HomePage";
-import ProjectsPage from "./pages/ProjectsPage";
-import AddProjectPage from "./pages/AddProjectPage";
-import DSAPage from "./pages/DSAPage";
-import DashboardPage from "./pages/DashboardPage";
-import Footer from "./footer/Footer";
+import Menubar from "./navbar/Menubar.jsx";
+import Navbar from "./navbar/Navbar.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import ProjectsPage from "./pages/ProjectsPage.jsx";
+import AddProjectPage from "./pages/AddProjectPage.jsx";
+import DSAPage from "./pages/DSAPage.jsx";
+import DashboardPage from "./pages/DashboardPage.jsx";
+import Footer from "./footer/Footer.jsx";
 
 function App() {
   return (
