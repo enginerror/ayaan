@@ -25,13 +25,13 @@ const Hero = () => {
       <div className="w-full flex justify-center items-center gap-2 sm:gap-3 mt-8 sm:mt-10 flex-wrap sm:flex-nowrap px-4">
         <button
           onClick={() => navigate("/projects")}
-          className="px-4 sm:px-6 py-2 sm:py-2.5 border-2 border-[#D97757] bg-[#D97757] text-white rounded-sm text-sm sm:text-base hover:bg-[#d97857ea] hover:border-[#d97857ea] transition-colors w-full sm:w-auto"
+          className="px-4 sm:px-6 py-1.5 sm:py-2 border-2 border-[#D97757] bg-[#D97757] text-white rounded-sm text-sm sm:text-base hover:bg-[#d97857ea] hover:border-[#d97857ea] transition-colors w-full sm:w-auto"
         >
           Projects
         </button>
         <button
           onClick={() => window.open("/Ayaan_Resume.pdf", "_blank")}
-          className="px-4 sm:px-6 py-2 sm:py-2.5 border-2 border-[#030712] rounded-sm flex gap-2 items-center justify-center text-sm sm:text-base hover:bg-gray-100 transition-colors w-full sm:w-auto"
+          className="px-4 sm:px-6 py-1.5 sm:py-2 border-2 border-[#030712] rounded-sm flex gap-2 items-center justify-center text-sm sm:text-base hover:bg-gray-100 transition-colors w-full sm:w-auto"
         >
           Resume{" "}
           <FileText
