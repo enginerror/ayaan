@@ -1,6 +1,6 @@
 import { TextShimmer } from "@/components/TextLoader";
 
-const DashboardPage = () => {
+const CoursesPage = () => {
   return (
     <div className="min-h-screen w-full flex justify-center mt-6 sm:mt-8 md:mt-12">
       <TextShimmer>Development in progress ...</TextShimmer>
@@ -8,4 +8,4 @@ const DashboardPage = () => {
   );
 };
 
-export default DashboardPage;
+export default CoursesPage;

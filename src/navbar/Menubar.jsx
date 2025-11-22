@@ -7,7 +7,7 @@ const Menubar = () => {
     <div className="hidden sm:block">
       <div className="w-full flex justify-center items-center relative">
         <div
-          className="flex justify-center items-center border border-white/30 bg-white/20 backdrop-blur-3xl shadow-xl fixed mt-12 sm:mt-14 md:mt-16 px-2 py-2 rounded-full z-40 gap-1"
+          className="flex justify-center items-center border border-white/30 bg-white/20 backdrop-blur-3xl shadow-xl fixed mt-12 sm:mt-14 md:mt-16 px-2 py-2 rounded-full z-40 gap-0 md:gap-1"
         >
           <Link to="/">
             <p
@@ -45,15 +45,15 @@ const Menubar = () => {
             </p>
           </Link>
 
-          <Link to="/dashboard">
+          <Link to="/courses">
             <p
-              className={`text-xs sm:text-sm md:text-[14px] px-3 sm:px-4 md:px-5 py-2 rounded-full cursor-pointer uppercase transition-colors duration-200 ${
-                location.pathname === "/dashboard"
+              className={`text-xs sm:text-sm md:text-[14px] px-3 sm:px-4 md:px-5 py-2 rounded-full cursor-pointer uppercase transition-colors duration-200 bg-[#D97757] text-white ${
+                location.pathname === "/courses"
                   ? "bg-black text-white"
                   : "hover:bg-gray-200 hover:text-black"
               }`}
             >
-              Dashboard
+              Courses
             </p>
           </Link>
         </div>
