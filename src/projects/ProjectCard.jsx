@@ -2,7 +2,7 @@ import { Code, Link } from "lucide-react";
 
 const ProjectCard = () => {
   return (
-    <div className="h-fit w-full flex justify-between rounded-md border border-gray-200 p-2 md:p-2.5">
+    <div className="h-fit w-full flex justify-between rounded-md border border-muted-border p-2 md:p-2.5">
       <div>
         <div className="flex items-center gap-2">
           <p className="text-md sm:text-lg md:text-xl lg:text-2xl font-normal">

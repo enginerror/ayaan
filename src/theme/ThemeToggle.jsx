@@ -70,13 +70,13 @@ const ThemeToggle = () => {
 
         {/* Menu */}
         {open && (
-          <div className="absolute right-0 mt-2 w-35 bg-background shadow-lg rounded-md border border-gray-200">
+          <div className="absolute right-0 mt-2 w-26 sm:w-35 bg-background shadow-lg rounded-md border border-muted-border overflow-hidden">
             <ul>
               <li
                 onClick={() => handleThemeChange("light")}
                 aria-pressed={theme === "light"}
                 title="Light"
-                className="px-3 sm:px-4 py-1.5 sm:py-2 hover:bg-gray-100 cursor-pointer text-xs sm:text-sm flex items-center gap-2 border-b border-gray-200"
+                className="px-3 sm:px-4 py-2 hover:bg-secondary-foreground cursor-pointer text-xs sm:text-sm flex items-center gap-2 border-b border-muted-border"
               >
                 Light{" "}
                 <Sun className="h-3.5 sm:h-4 w-3.5 sm:w-4" strokeWidth={2} />
@@ -85,7 +85,7 @@ const ThemeToggle = () => {
                 onClick={() => handleThemeChange("dark")}
                 aria-pressed={theme === "dark"}
                 title="Dark"
-                className="px-3 sm:px-4 py-1.5 sm:py-2 hover:bg-gray-100 cursor-pointer text-xs sm:text-sm flex items-center gap-2 border-b border-gray-200"
+                className="px-3 sm:px-4 py-2 hover:bg-secondary-foreground cursor-pointer text-xs sm:text-sm flex items-center gap-2 border-b border-muted-border"
               >
                 Dark{" "}
                 <Moon className="h-3.5 sm:h-4 w-3.5 sm:w-4" strokeWidth={2} />
@@ -94,7 +94,7 @@ const ThemeToggle = () => {
                 onClick={() => handleThemeChange("system")}
                 aria-pressed={theme === "system"}
                 title="Use system preference"
-                className="px-3 sm:px-4 py-1.5 sm:py-2 hover:bg-gray-100 cursor-pointer text-xs sm:text-sm flex items-center gap-2"
+                className="px-3 sm:px-4 py-2 hover:bg-secondary-foreground cursor-pointer text-xs sm:text-sm flex items-center gap-2"
               >
                 System{" "}
                 <Monitor className="h-3.5 sm:h-4 w-3.5 sm:w-4" strokeWidth={2} />

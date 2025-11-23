@@ -8,7 +8,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between items-center py-3 sm:py-4">
+      <div className="flex justify-between items-center py-3">
         <Link to="/" className="prata-regular text-lg sm:text-xl md:text-2xl flex items-center gap-2">
           <div className="hidden sm:block w-4 sm:w-6 md:w-8 lg:w-10 h-[1.5px] bg-foreground rounded-sm"></div> enginerror
         </Link>

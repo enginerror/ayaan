@@ -12,7 +12,7 @@ const Hero = () => {
           Hi, my name is
         </p>
 
-        <div className="flex items-center gap-2 sm:gap-4 md:gap-6 mt-3 sm:mt-8 justify-center flex-wrap sm:flex-nowrap">
+        <div className="flex items-center gap-2 sm:gap-4 md:gap-6 mt-2 sm:mt-6 justify-center flex-wrap sm:flex-nowrap">
           <div className="hidden sm:block w-8 sm:w-12 md:w-16 lg:w-52 h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 bg-foreground rounded-sm"></div>
           <h1 className="prata-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-center whitespace-nowrap">
             Ayaan Murshed Khan
@@ -34,7 +34,7 @@ const Hero = () => {
         </button>
         <button
           onClick={() => window.open("/Ayaan_Resume.pdf", "_blank")}
-          className="px-4 sm:px-6 py-1.5 sm:py-2 border-2 border-button-border text-border rounded-xs flex gap-1.5 items-center justify-center text-sm sm:text-base hover:bg-secondary-foreground transition-colors w-full sm:w-auto"
+          className="px-4 sm:px-6 py-1.5 sm:py-2 border-2 border-border text-border rounded-xs flex gap-1.5 items-center justify-center text-sm sm:text-base hover:bg-secondary-foreground transition-colors w-full sm:w-auto"
         >
           Resume{" "}
           <FileText
