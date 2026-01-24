@@ -1,126 +1,110 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
-import Link from "next/link";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
+import { Fragment, useEffect, useState } from "react";
 
-type MenuLink = {
-  path: string;
-  label: string;
-};
-
-const menuLinks: MenuLink[] = [
-  { path: "#", label: "Home" },
-  { path: "#", label: "About" },
-  { path: "#", label: "Projects" },
-  { path: "#", label: "Contact" },
-  { path: "#", label: "Blogs" },
+const sitemapItems = ["Index", "About", "Projects [9]", "Services", "Contact"];
+const connectItems = [
+  "Resume",
+  "Twitter",
+  "Instagram",
+  "Email",
+  "LinkedIn",
+  "Dribbble",
 ];
 
-const Menu: React.FC = () => {
-  const container = useRef<HTMLDivElement | null>(null);
-  const tl = useRef<gsap.core.Timeline | null>(null);
+const toIndianTime = (date: Date) =>
+  date.toLocaleTimeString("en-IN", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+    timeZone: "Asia/Kolkata",
+  });
 
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-
-  const toggleMenu = () => setIsMenuOpen((prev) => !prev);
-
-  useGSAP(
-    () => {
-      gsap.set(".menu-link-item-holder", { y: 75 });
-
-      tl.current = gsap
-        .timeline({ paused: true })
-        .to(".menu-overlay", {
-          duration: 1.25,
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-          ease: "power4.inOut",
-        })
-        .to(
-          ".menu-link-item-holder",
-          {
-            y: 0,
-            duration: 1,
-            stagger: 0.1,
-            ease: "power4.inOut",
-          },
-          "-=0.75",
-        );
-    },
-    { scope: container },
-  );
+const Menu = () => {
+  const [indianTime, setIndianTime] = useState(() => toIndianTime(new Date()));
 
   useEffect(() => {
-    if (!tl.current) return;
+    const updateTime = () => setIndianTime(toIndianTime(new Date()));
 
-    isMenuOpen ? tl.current.play() : tl.current.reverse();
-  }, [isMenuOpen]);
+    const interval = setInterval(updateTime, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div ref={container}>
-      {/* MENU BAR */}
-      <div className="px-8 py-4 fixed top-0 left-0 z-10 flex w-full items-center justify-end">
-        <button onClick={toggleMenu}>
-          Menu
-        </button>
+    <div className="pb-4 grid grid-cols-1 border-b md:grid-cols-3">
+      <div className="flex flex-col gap-1">
+        <label className="text-xs text-gray-600">Name</label>
+        <p className="uppercase text-[14px] tracking-tighter leading-4.5">
+          <span className="group relative inline-block pb-0.5 cursor-pointer">
+            <span className="relative">
+              Ayaan Murshed khan
+              <span className="pointer-events-none absolute inset-x-0 bottom-0 h-[0.5px] origin-left scale-x-0 bg-[#FF2F00] transition-transform duration-300 ease-out group-hover:scale-x-100" />
+            </span>
+          </span>
+          <sup className="text-[8px] font-medium">TM</sup>, 2026 <br /> GMT+5:30
+          ({indianTime}, IST)
+        </p>
       </div>
 
-      {/* OVERLAY */}
-      <div
-        className="menu-overlay fixed top-0 left-0 z-20 flex h-screen w-full bg-white/20 backdrop-blur-2xl border border-white/30 shadow-[0_8px_32px_rgba(0,0,0,0.25)]"
-        style={{
-          clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
-        }}
-      >
-        {/* LEFT */}
-        <div className="p-6 hidden flex-2 items-end cursor-pointer lg:flex">
-          <p className="text-[100px] leading-[70%] text-black font-light">
-            &#x2715;
+      <div className="flex justify-center">
+        <div className="flex flex-col gap-1">
+          <label className="text-xs text-gray-600">Sitemap</label>
+          <p className="uppercase text-[14px] tracking-tighter leading-4.5 cursor-default">
+            {sitemapItems.map((item, index) => {
+              const isLast = index === sitemapItems.length - 1;
+              const needsBreak = item === "Projects [9]";
+
+              return (
+                <Fragment key={item}>
+                  <span className="group relative inline-block pb-0.5">
+                    <span className="relative cursor-pointer">
+                      {item}
+                      <span className="pointer-events-none absolute inset-x-0 bottom-0 h-[0.5px] bg-[#FF2F00] origin-right scale-x-0 transition-transform duration-300 ease-out group-hover:origin-left group-hover:scale-x-100" />
+                    </span>
+                  </span>
+                  {!isLast &&
+                    (needsBreak ? (
+                      <>
+                        ,<br />
+                      </>
+                    ) : (
+                      ", \u00a0"
+                    ))}
+                </Fragment>
+              );
+            })}
           </p>
         </div>
+      </div>
+      <div className="flex justify-end">
+        <div className="flex flex-col gap-1">
+          <label className="text-xs text-gray-600">Let's connect</label>
+          <p className="uppercase text-[14px] tracking-tighter leading-4.5 cursor-default">
+            {connectItems.map((item, index) => {
+              const isLast = index === connectItems.length - 1;
+              const needsBreak = item === "Instagram";
 
-        {/* CENTER */}
-        <div className="flex flex-4 flex-col justify-between pt-32 lg:pt-8">
-          {/* TOP BAR */}
-          <div className="px-8 py-4 fixed top-0 left-0 flex w-full items-center justify-end">
-            <button onClick={toggleMenu} className="text-black">
-              Close
-            </button>
-          </div>
-
-          {/* LINKS */}
-          <div>
-            {menuLinks.map((link, index) => (
-              <div key={index} className="overflow-hidden w-max">
-                <div
-                  className="menu-link-item-holder relative cursor-pointer"
-                  onClick={toggleMenu}
-                >
-                  <Link
-                    href={link.path}
-                    className="block text-black text-[60px] lg:text-[80px] font-normal leading-[85%] tracking-tight"
-                  >
-                    {link.label}
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* INFO */}
-          <div className="py-6 flex gap-8">
-            <div className="flex flex-1 flex-col justify-end gap-2">
-              <a href="#">X ↗</a>
-              <a href="#">Instagram ↗</a>
-              <a href="#">LinkedIn ↗</a>
-            </div>
-          </div>
-        </div>
-
-        {/* RIGHT */}
-        <div className="p-6 flex flex-4 items-end justify-end">
-          <p>Resume</p>
+              return (
+                <Fragment key={item}>
+                  <span className="group relative inline-block pb-0.5">
+                    <span className="relative cursor-pointer">
+                      {item}
+                      <span className="pointer-events-none absolute inset-x-0 bottom-0 h-[0.5px] bg-[#FF2F00] origin-right scale-x-0 transition-transform duration-300 ease-out group-hover:origin-left group-hover:scale-x-100" />
+                    </span>
+                  </span>
+                  {!isLast &&
+                    (needsBreak ? (
+                      <>
+                        ,<br />
+                      </>
+                    ) : (
+                      ", \u00a0"
+                    ))}
+                </Fragment>
+              );
+            })}
+          </p>
         </div>
       </div>
     </div>

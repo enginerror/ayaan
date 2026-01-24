@@ -1,56 +1,55 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import ayaan from "./images/ayaan.png";
+import Img from "./images/img2.jpg";
+import { Languages } from "lucide-react";
 
 export default function Hero() {
   return (
-    // bg-[radial-gradient(circle_at_top,#1a1a1a_0%,transparent_55%)]
-    <section className="relative flex min-h-screen flex-col justify-center overflow-hidden px-6 sm:px-12 lg:px-24">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-24 top-16 h-48 w-48 rounded-full bg-amber-200/30 blur-3xl" />
-        <div className="absolute right-0 top-1/3 h-64 w-64 rounded-full bg-amber-300/20 blur-3xl" />
-        <div className="absolute -bottom-12 left-1/3 h-56 w-86 rounded-full bg-amber-200/20 blur-3xl" />
-      </div>
-
-      <div className="relative z-10 flex items-center gap-8">
-        <div>
-          <h1 className="text-4xl font-base sm:text-5xl lg:text-7xl">
-            Code with <br /> Consistency
+    <section className="h-full">
+      <div className="mt-4 flex justify-between">
+        <div className="flex flex-col">
+          <h1 className="text-[50px] font-normal leading-[1.1] tracking-tight">
+            &nbsp; &nbsp; &nbsp; &nbsp;My name is Ayaan. <br /> I'm a
+            <span className="ml-1 text-[#FF2F00]"> Full Stack Developer</span> <br />{" "}
+            Based in India (IN).
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg sm:text-xl">
-            I craft interactive experiences for forward-thinking teams—from
-            product vision to polished launch. Each project balances clarity,
-            bold visuals, and motion to keep audiences engaged.
-          </p>
+          <div className="mt-6">
+            <p className="text-[20px]">Latest Project</p>
+            <div className="w-fit mt-2 p-4 border flex gap-6">
+              <div className="border border-black">
+                <Image className="h-auto w-52" src={Img} alt="" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <p className="text-xs text-gray-600 tracking-tight">
+                  AI, Vision, Blockchain Design UI, 2024
+                </p>
+                <p className="uppercase text-[14px] tracking-tight">
+                  Blockchain Graph
+                </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <div className="flex items-center justify-center gap-3">
-              <Link
-                href="#work"
-                className="bg-black px-7 py-2.5 text-sm font-medium tracking-wider text-white transition hover:bg-white/80"
-              >
-                Projects
-              </Link>
-              <Link
-                href="#contact"
-                className="rounded-full border border-white/30 px-7 py-3 text-sm font-medium tracking-wider transition hover:border-white hover:bg-white/10"
-              >
-                Resume
-              </Link>
+                <div className="w-fit px-1.5 flex justify-center text-[15px] border rounded-xl uppercase tracking-tighter">
+                  All Projects
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="bg-red-400">
-          <Image
-            src={ayaan}
-            alt="Portrait of Ayaan"
-            className="h-full w-full"
-            priority
-          />
+        <div>
+          <Image className="h-auto w-80" src={ayaan} alt="" priority />
+        </div>
+      </div>
+
+      <div className="mt-10 flex justify-between">
+        <div className="text-2xl uppercase tracking-tight">
+          Currently available for Freelance Projects
+        </div>
+
+        <div className="border rounded-full p-4">
+          <Languages className="h-5 w-5" strokeWidth={1.5} />
         </div>
       </div>
     </section>
