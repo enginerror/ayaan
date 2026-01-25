@@ -1,9 +1,7 @@
 "use client";
 
-import Hero from "./assets/components/Hero";
-import Marquee from "./assets/components/Marquee";
-import Menu from "./assets/components/Menu";
-import ProjectCard from "./assets/components/ProjectCard";
+import Hero from "./components/Hero";
+import Menu from "./components/Menu";
 
 export default function Home() {
   return (
@@ -13,13 +11,10 @@ export default function Home() {
         <div className="absolute right-0 top-1/3 h-64 w-64 rounded-full bg-blue-300/20 blur-3xl" />
         <div className="absolute -bottom-12 left-1/3 h-56 w-86 rounded-full bg-blue-200/20 blur-3xl" />
       </div>
-
       <div className="relative m-5 mb-0">
         <Menu />
         <Hero />
       </div>
-      {/* <Marquee />
-      <ProjectCard /> */}
     </div>
   );
 }

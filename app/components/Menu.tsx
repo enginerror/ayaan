@@ -4,12 +4,13 @@ import Link from "next/link";
 import { Fragment, useEffect, useState } from "react";
 
 const sitemapItems = [
-  { label: "Index" },
+  { label: "Index", href: "/" },
   { label: "About" },
   { label: "Projects [9]", href: "/projects" },
   { label: "Services" },
-  { label: "Contact" },
+  { label: "Contact", href: "/contact" },
 ];
+
 const connectItems = [
   "Resume",
   "Twitter",

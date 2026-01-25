@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
-import cardImage from './images/down-arrow.png'
+import cardImage from "./images/down-arrow.png";
 
 const Marquee = () => {
   const currentScroll = useRef(0);
@@ -65,12 +65,7 @@ const Marquee = () => {
             >
               {text}
               <div className="arrow mx-4 h-20 w-15 rotate-90 transition-all duration-1000 ease-[cubic-bezier(0.075,0.82,0.165,1)]">
-                <Image
-                  src={cardImage}
-                  alt="arrow"
-                  width={70}
-                  height={70}
-                />
+                <Image src={cardImage} alt="arrow" width={70} height={70} />
               </div>
             </div>
           ))}

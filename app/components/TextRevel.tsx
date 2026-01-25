@@ -12,12 +12,14 @@ interface CopyProps {
   children: ReactNode;
   animateOnScroll?: boolean;
   delay?: number;
+  triggerOnEvent?: string;
 }
 
-export default function Copy({
+export default function TextRevel({
   children,
   animateOnScroll = true,
   delay = 0,
+  triggerOnEvent,
 }: CopyProps) {
   const containerRef = useRef<HTMLElement | null>(null);
   const elementRef = useRef<HTMLElement[]>([]);
@@ -70,31 +72,52 @@ export default function Copy({
         y: "0%",
         duration: 1,
         stagger: 0.1,
-        ease: "power4.out",
+        ease: "power2.out",
         delay,
       };
 
-      if (animateOnScroll) {
-        gsap.to(lines.current, {
-          ...animationProps,
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 75%",
-            once: true,
-          },
+      let tween: gsap.core.Tween | null = null;
+      let scrollInstance: ScrollTrigger | null = null;
+      let eventHandler: (() => void) | null = null;
+
+      const runAnimation = () => {
+        tween?.kill();
+        tween = gsap.to(lines.current, animationProps);
+      };
+
+      const eventName = triggerOnEvent?.trim();
+
+      if (eventName) {
+        eventHandler = () => {
+          runAnimation();
+          window.removeEventListener(eventName, eventHandler!);
+        };
+
+        window.addEventListener(eventName, eventHandler);
+      } else if (animateOnScroll) {
+        scrollInstance = ScrollTrigger.create({
+          trigger: containerRef.current,
+          start: "top 75%",
+          once: true,
+          onEnter: runAnimation,
         });
       } else {
-        gsap.to(lines.current, animationProps);
+        runAnimation();
       }
 
       return () => {
+        tween?.kill();
+        scrollInstance?.kill();
+        if (eventName && eventHandler) {
+          window.removeEventListener(eventName, eventHandler);
+        }
         splitRef.current.forEach((split) => split?.revert());
       };
     },
     {
       scope: containerRef,
-      dependencies: [animateOnScroll, delay],
-    }
+      dependencies: [animateOnScroll, delay, triggerOnEvent],
+    },
   );
 
   if (React.Children.count(children) === 1) {

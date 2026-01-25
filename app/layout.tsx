@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Figtree, Geist, Geist_Mono } from "next/font/google";
-import bowserIcon from "./assets/components/images/bowser-icon.png";
+import bowserIcon from "./components/images/bowser-icon.png";
 import "./globals.css";
 
 const geistSans = Geist({
