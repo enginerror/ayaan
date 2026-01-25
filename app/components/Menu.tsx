@@ -5,7 +5,7 @@ import { Fragment, useEffect, useState } from "react";
 
 const sitemapItems = [
   { label: "Index", href: "/" },
-  { label: "About" },
+  { label: "About", href: "/about" },
   { label: "Projects [9]", href: "/projects" },
   { label: "Services" },
   { label: "Contact", href: "/contact" },
@@ -44,12 +44,15 @@ const Menu = () => {
       <div className="flex flex-col gap-1">
         <label className="text-xs text-gray-600">Name</label>
         <p className="uppercase text-[14px] tracking-tighter leading-4.5">
-          <span className="group relative inline-block pb-0.5 cursor-pointer">
+          <Link
+            href="/"
+            className="group relative inline-block pb-0.5 cursor-pointer"
+          >
             <span className="relative">
-              Ayaan Murshed khan
+              Ayaan Murshed Khan
               <span className="pointer-events-none absolute inset-x-0 bottom-0 h-[0.5px] origin-left scale-x-0 bg-[#FF2F00] transition-transform duration-300 ease-out group-hover:scale-x-100" />
             </span>
-          </span>
+          </Link>
           <sup className="text-[8px] font-medium">TM</sup>, 2026 <br /> GMT+5:30
           ({indianTime}, IST)
         </p>

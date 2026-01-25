@@ -72,7 +72,7 @@ export default function TextRevel({
         y: "0%",
         duration: 1,
         stagger: 0.1,
-        ease: "power2.out",
+        ease: "power4.out",
         delay,
       };
 
