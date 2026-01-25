@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, ReactElement, ReactNode } from "react";
+import React, { useCallback, useRef, ReactElement, ReactNode } from "react";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -25,6 +25,14 @@ export default function TextRevel({
   const elementRef = useRef<HTMLElement[]>([]);
   const splitRef = useRef<SplitText[]>([]);
   const lines = useRef<HTMLElement[]>([]);
+
+  const setElementRef = useCallback((node: HTMLElement | null) => {
+    containerRef.current = node;
+  }, []);
+
+  const setDivRef = useCallback((node: HTMLDivElement | null) => {
+    containerRef.current = node;
+  }, []);
 
   useGSAP(
     () => {
@@ -120,14 +128,26 @@ export default function TextRevel({
     },
   );
 
-  if (React.Children.count(children) === 1) {
-    return React.cloneElement(children as ReactElement, {
-      ref: containerRef,
-    });
+  const isSingleElement = React.Children.count(children) === 1;
+  const isIntrinsicElement =
+    isSingleElement &&
+    React.isValidElement(children) &&
+    typeof children.type === "string";
+
+  if (isIntrinsicElement) {
+    return React.cloneElement(
+      children as ReactElement,
+      {
+        ref: setElementRef,
+      } as any,
+    );
   }
 
   return (
-    <div ref={containerRef} data-copy-wrapper="true">
+    <div
+      ref={setDivRef}
+      data-copy-wrapper={isSingleElement ? undefined : "true"}
+    >
       {children}
     </div>
   );
